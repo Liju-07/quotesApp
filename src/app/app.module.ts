@@ -3,14 +3,29 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { QuotesComponent } from './quotes/quotes.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { Routes, RouterModule } from '@angular/router';
+import {  HttpClientModule }  from '@angular/common/http'
+
+const app:Routes=[
+  {
+    path:"",component:QuotesComponent
+  }
+]
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    QuotesComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+   RouterModule.forRoot(app),
+   HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
